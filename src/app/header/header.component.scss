@@ -1,0 +1,28 @@
+.dropDown{
+    position: absolute;
+    top: 6%;
+    right:0px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 20px 0px #8A959E33;
+    min-width: 230px;
+
+}
+
+.notification{
+    position: absolute;
+    top: 6%;
+    right:50px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+    padding: 15px 12px 15px 12px;
+    box-shadow: 0px 0px 20px 0px #8A959E33;
+    min-width: 330px;
+    max-width: 330px;
+    
+}

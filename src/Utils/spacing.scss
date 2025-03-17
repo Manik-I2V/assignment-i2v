@@ -1,0 +1,246 @@
+// Define only the required sizes to optimize performance
+$spacing-values: (0,1,2,3,4, 5, 10,11,12,13,14, 15,16,17,18,19, 20,24, 25,26,27,28,29, 30,31,32,33,34,35,36,37,38,39, 40, 50, 60, 70, 80, 100);
+$percentages: (5, 10, 15, 20, 25, 30,31,32,33,34,35,36,37,38,39, 35, 40, 45, 50, 55, 60, 65,66, 70, 75, 80, 85, 90, 95, 100);
+$viewport-sizes: (10, 20, 25, 30, 40, 50,51,52,53,54,55,56,57,58,59, 60,61,62,63,64,65,66,67,68,69, 70, 80, 90, 100);
+
+@each $size in $spacing-values {
+  .p-#{$size} { padding: #{$size}px !important; }
+  .m-#{$size} { margin: #{$size}px !important; }
+  .pt-#{$size} { padding-top: #{$size}px !important; }
+  .pb-#{$size} { padding-bottom: #{$size}px !important; }
+  .pl-#{$size} { padding-left: #{$size}px !important; }
+  .pr-#{$size} { padding-right: #{$size}px !important; }
+  .mt-#{$size} { margin-top: #{$size}px !important; }
+  .mb-#{$size} { margin-bottom: #{$size}px !important; }
+  .ml-#{$size} { margin-left: #{$size}px !important; }
+  .mr-#{$size} { margin-right: #{$size}px !important; }
+  .gp-#{$size} { gap: #{$size}px !important; }
+  .w-#{$size} { width: #{$size}px !important; }
+  .h-#{$size} { height: #{$size}px !important; }
+  .fs-#{$size} { font-size: #{$size}px !important; }
+}
+
+@each $percent in $percentages {
+  .w-#{$percent}-p { width: #{$percent + "%"} !important; }
+  .h-#{$percent}-p { height: #{$percent + "%"} !important; }
+  .mw-#{$percent}-p { max-width: #{$percent + "%"} !important; }
+  .mh-#{$percent}-p { max-height: #{$percent + "%"} !important; }
+  .minw-#{$percent}-p { min-width: #{$percent + "%"} !important; }
+  .minh-#{$percent}-p { min-height: #{$percent + "%"} !important; }
+  .top-#{$percent}-p { top: #{$percent + "%"} !important; }
+  .left-#{$percent}-p { left: #{$percent + "%"} !important; }
+  .right-#{$percent}-p { right: #{$percent + "%"} !important; }
+  .bottom-#{$percent}-p { bottom: #{$percent + "%"} !important; }
+}
+
+
+
+@each $size in $viewport-sizes {
+  .w-#{$size}vw { width: #{$size}vw !important; }
+  .h-#{$size}vh { height: #{$size}vh !important; }
+  .mw-#{$size}vw { max-width: #{$size}vw !important; }
+  .mh-#{$size}vh { max-height: #{$size}vh !important; }
+  .minw-#{$size}vw { min-width: #{$size}vw !important; }
+  .minh-#{$size}vh { min-height: #{$size}vh !important; }
+}
+
+
+// Font Weights
+$font-weights-map: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  black: 900,
+);
+
+@each $name, $weight in $font-weights-map {
+  .fw-#{$name} { font-weight: #{$weight} !important; }
+  .fw-#{$weight} { font-weight: #{$weight} !important; }
+}
+
+// Colors
+$color-map: (
+  r: #FF0000, // red
+  w: #FFFFFF, // white
+  b: #000000, // black
+  bl: #0000FF, // blue
+  g: #008000, // green
+  y: #FFFF00, // yellow
+  o: #FFA500, // orange
+  p: #800080, // purple
+  gr: #808080, // gray
+  txt-g : #25A79C,
+  border-light : #E3EAF4,
+  txt-light :#6C757D,
+  l-b-g-w : #EEF3F7,
+  bgr-gw : #EEF3F7,
+  footer-bdr : #8A959E26,
+  none: none,
+  table-header : #F2F3FF
+);
+
+@each $key, $color in $color-map {
+  .clr-#{$key} { color: #{$color} !important; }
+  .bg-clr-#{$key} { background-color: #{$color} !important; }
+}
+
+// Border Widths
+$border-widths: (0,1, 2, 3, 4, 5);
+
+@each $width in $border-widths {
+  .b-#{$width} { border-width: #{$width}px !important; border-style: solid !important; }
+  .b-t-#{$width} { border-top-width: #{$width}px !important; }
+  .b-b-#{$width} { border-bottom-width: #{$width}px !important; }
+  .b-l-#{$width} { border-left-width: #{$width}px !important; }
+  .b-r-#{$width} { border-right-width: #{$width}px !important; }
+}
+
+// Border Radius
+$border-radius-values: (5,6,7,8,9, 10,11,12,13,14, 15, 20,32,45, 50);
+
+@each $radius in $border-radius-values {
+  .br-#{$radius} { border-radius: #{$radius}px !important; }
+}
+
+// Border Styles
+$border-styles: (solid, dashed, dotted, double, none);
+
+@each $style in $border-styles {
+  .b-#{$style} { border-style: #{$style} !important; }
+  .b-t-#{$style} { border-top-style: #{$style} !important; }
+  .b-b-#{$style} { border-bottom-style: #{$style} !important; }
+  .b-l-#{$style} { border-left-style: #{$style} !important; }
+  .b-r-#{$style} { border-right-style: #{$style} !important; }
+}
+
+// Border Colors
+@each $key, $color in $color-map {
+  .b-clr-#{$key} { border-color: #{$color} !important; }
+  .b-t-clr-#{$key} { border-top-color: #{$color} !important; }
+  .b-b-clr-#{$key} { border-bottom-color: #{$color} !important; }
+  .b-l-clr-#{$key} { border-left-color: #{$color} !important; }
+  .b-r-clr-#{$key} { border-right-color: #{$color} !important; }
+}
+
+// Justify Content
+$justify-map: (
+  stch: stretch,
+  st: flex-start,
+  ctr: center,
+  e: flex-end,
+  sb: space-between,
+  sa: space-around,
+  se: space-evenly
+);
+
+@each $key, $value in $justify-map {
+  .jc-#{$key} { justify-content: #{$value} !important; }
+}
+
+// Align Items
+$align-map: (
+  stch: stretch,
+  st: flex-start,
+  ctr: center,
+  e: flex-end,
+  bl: baseline
+);
+
+@each $key, $value in $align-map {
+  .ai-#{$key} { align-items: #{$value} !important; }
+}
+
+// Box Shadows
+$box-shadows: (
+  sm: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  md: 0px 3px 6px rgba(0, 0, 0, 0.16),
+  lg: 0px 10px 20px rgba(0, 0, 0, 0.19),
+  xl: 0px 15px 30px rgba(0, 0, 0, 0.25),
+  none: none
+);
+
+@each $key, $shadow in $box-shadows {
+  .bx-shd-#{$key} { box-shadow: #{$shadow} !important; }
+}
+
+
+// For no shadow
+.bx-shd-none { box-shadow: none !important; }
+
+// Flex Ratios
+$flex-ratios: (1, 2, 3, 4, 5);
+
+@each $ratio in $flex-ratios {
+  .flex-#{$ratio} {
+    flex: #{$ratio} !important;
+  }
+}
+
+
+// Grid Properties
+$grid-values: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+@each $val in $grid-values {
+  .grid-cols-#{$val} { grid-template-columns: repeat(#{$val}, 1fr) !important; }
+  .grid-rows-#{$val} { grid-template-rows: repeat(#{$val}, 1fr) !important; }
+}
+
+// Grid Gaps
+@each $size in $spacing-values {
+  .grid-gap-#{$size} { gap: #{$size}px !important; }
+  .grid-row-gap-#{$size} { row-gap: #{$size}px !important; }
+  .grid-col-gap-#{$size} { column-gap: #{$size}px !important; }
+}
+
+// Grid Auto Flow
+$grid-auto-flow-map: (
+  row: row,
+  col: column,
+  dense: dense,
+  row-dense: row dense,
+  col-dense: column dense
+);
+
+@each $key, $value in $grid-auto-flow-map {
+  .grid-flow-#{$key} { grid-auto-flow: #{$value} !important; }
+}
+
+// Grid Justification and Alignment
+@each $key, $value in $justify-map {
+  .grid-jc-#{$key} { justify-items: #{$value} !important; }
+}
+
+@each $key, $value in $align-map {
+  .grid-ai-#{$key} { align-items: #{$value} !important; }
+}
+
+// Grid Self Alignment
+@each $key, $value in $align-map {
+  .grid-as-#{$key} { align-self: #{$value} !important; }
+}
+
+// Grid Justify Self
+@each $key, $value in $justify-map {
+  .grid-js-#{$key} { justify-self: #{$value} !important; }
+}
+
+// Overflow Utilities
+$overflow-values: (visible, hidden, scroll, auto);
+
+@each $val in $overflow-values {
+  .overflow-#{$val} { overflow: #{$val} !important; }
+  .overflow-x-#{$val} { overflow-x: #{$val} !important; }
+  .overflow-y-#{$val} { overflow-y: #{$val} !important; }
+}
+
+
+$z-index-values: (-1, 0, 1,2,3,4, 5, 10, 50, 100, 500, 999, 1000, 9999);
+
+@each $z in $z-index-values {
+  .z-#{$z} { z-index: #{$z} !important; }
+}

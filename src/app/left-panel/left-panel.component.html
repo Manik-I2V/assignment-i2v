@@ -1,0 +1,17 @@
+<div class="flex-col-cs">
+    <div class="flex-row-bottom pb-0 p-10 logoDiv">
+        <img class="logo" [src]="logoPath"/>
+        <button class="btn fs-9">Admin</button>
+    </div>
+    <app-menu-group class="gp-10 flex-col-cs p-10 pt-30" [menuList]="menuList"></app-menu-group>
+</div>
+<div class="flex-row-bottom p-10 gp-10">
+    <button class="btn-icon flex-1 jc-ctr">
+        <img class="icon-img" [src]="lightIcon"/>
+        <span>Light</span>
+    </button>
+    <button class="btn-icon flex-1 jc-ctr">
+        <img class="icon-img" [src]="darkIcon"/>
+        <span>Dark</span>
+    </button>
+</div>

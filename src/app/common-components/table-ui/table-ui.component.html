@@ -1,0 +1,76 @@
+<mat-card class="bg-clr-w b-solid b-1 b-clr-border-light bx-shd-none br-12 flex-col">
+  <div class="flex-row pl-20 pr-20 pt-10 pb-11">
+
+    <div class="flex-row gp-10 h-36">
+      <button class=" bg-clr-w b-t-0 b-l-0 b-r-0">All</button>
+      <button class="clr-txt-light bg-clr-w b-t-0 b-l-0 b-r-0 b-b-0">Awaiting Reimbursement</button>
+      <button class="clr-txt-light bg-clr-w b-t-0 b-l-0 b-r-0 b-b-0">Reimbursed</button>
+    </div>
+    <div class="flex-row flex-1 h-36 gp-10 jc-e">
+
+      <input type="date" class="w-full h-full cursor-pointer bg-clr-w br-8 b-1 b-clr-border-light pl-5 pr-5">
+
+      <div class="btn-icon-group gp-5  flex-row ai-ctr">
+        <button *ngFor="let item of button_icons" class="bg-clr-w br-32 b-1 b-clr-border-light">
+          <img [src]="item.icon" alt="icon" />
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <div class="mh-61vh overflow-auto flex-col flex-1b-0 pt-0 mt-0">
+
+    <table mat-table [dataSource]="tableDataSource" class="mat-elevation-z8 mh-5-p" matSort>
+
+
+
+      <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+
+        <ng-container *ngIf="column === 'select'">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? toggleAllRows() : null" [checked]="isAllSelected()"
+              [indeterminate]="isSomeSelected()"></mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? toggleRow(row) : null"
+              [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container *ngIf="column != 'select'">
+          <th mat-header-cell *matHeaderCellDef> {{ column | titlecase }} </th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngIf="column === 'username'; else checkCategory">
+              <div class="flex-row ai-ctr gp-10 ">
+                <img [src]="element.avatar" alt="Avatar" class="p-0 br-32 w-35 h-35 b-none bg-clr-w" />
+                <span>{{ element[column] }}</span>
+              </div>
+            </ng-container>
+
+            <ng-template #checkCategory>
+              <ng-container *ngIf="column === 'category'; else defaultCell">
+                <span class="bg-clr-bgr-gw pt-5 pb-5 pl-10 pr-10 br-8">{{ element[column] }}</span>
+              </ng-container>
+            </ng-template>
+
+            <ng-template #defaultCell>
+              {{ element[column] }}
+            </ng-template>
+          </td>
+        </ng-container>
+
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"
+        class="bg-clr-table-header clr-txt-light h-35 fs-12 fw-medium header-row"></tr>
+      <tbody class="h-30 overflow-auto">
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="fs-12 bg-clr-w"></tr>
+      </tbody>
+
+
+    </table>
+  </div>
+  <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</mat-card>

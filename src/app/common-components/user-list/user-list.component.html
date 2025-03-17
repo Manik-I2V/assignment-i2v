@@ -1,0 +1,24 @@
+<ng-container *ngFor="let user of list">
+    <div class="flex-row jc-sb pt-10 " [ngClass]="{ 'b-solid b-1 b-clr-border-light br-8 p-5': borderOnItem, 'b-0': !borderOnItem }" >
+      <div class="flex-row gp-10 ai-ctr">
+        <ng-container *ngIf="user.avatar">
+          <img [src]="user.avatar" alt="{{ user.name || 'User' }}" class="p-0 br-32 w-35 h-35 b-none bg-clr-w" />
+        </ng-container>
+        <ng-container *ngIf="user.icon">
+            <div class="w-30 h-30 br-30 flex-row jc-ctr ai-ctr">
+                <img [src]="user.icon" alt="{{ user.name || 'User' }}" class="p-0 w-35 h-35 b-none bg-clr-w" />
+            </div>
+          </ng-container>
+        <div class="flex-col gp-5">
+          <div *ngIf="user.name" class="fw-500">{{ user.name }}</div>
+          <div *ngIf="user.role" class="clr-txt-light">{{ user.role }}</div>
+          <div *ngIf="user.summary_amount" class="fw-500">{{ user.summary_amount }}</div>
+        </div>
+      </div>
+      <div class="flex-col gp-5 ai-e jc-ctr">
+        <div *ngIf="user.amount !== undefined" class="fw-500">₹ {{ user.amount | number }}</div>
+        <div *ngIf="user.expenses !== undefined" class="clr-txt-light">({{ user.expenses }} Expenses)</div>
+      </div>
+    </div>
+  </ng-container>
+  

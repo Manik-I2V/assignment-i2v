@@ -1,0 +1,63 @@
+<app-left-panel class="left-panel"></app-left-panel>
+<div class="right-cont">
+    <app-header class="header pl-10 pr-10"></app-header>
+    <div class="right-cont-sub flex-1 flex-col ">
+        <div *ngIf="currentPage() != 'Reimbursement'" class="flex-col flex-1">
+            <app-dashboard class="p-20 flex-col gp-15 flex-1"></app-dashboard>
+            <div>
+                <div class="flex-row gp-30 p-20 bg-clr-l-b-g-w jc-ctr">
+                    <div class="flex-1 mw-40-p">
+                        <mat-card class="h-100-p bg-clr-w b-solid b-1 b-clr-border-light bx-shd-none">
+
+                            <mat-card-header class="pb-10">
+                                <mat-card-title-group class="flex-row jc-sb">
+                                    <mat-card-title class="fs-20 mt-0 fw-500">Contact Us</mat-card-title>
+                                    <div class="flex-row clr-txt-light ai-ctr">
+                                        <span class="mr-10 fs-14">This year</span>
+                                        <button class="p-0 br-32 w-24 h-24 b-none bg-clr-w">
+                                            <img src="/assets/arrow-down.svg"
+                                                class="w-19 h-19 flex-row jc-ctr ai-ctr" />
+                                        </button>
+                                    </div>
+                                </mat-card-title-group>
+                            </mat-card-header>
+
+                            <mat-card-content class="flex-row fs-12 pt-5 b-t-solid b-t-1 b-t-clr-border-light">
+                                <app-user-list class="gp-10 flex-col" [list]="contactList"></app-user-list>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+
+                    <div class="flex-1 mw-40-p">
+                        <mat-card class="h-100-p bg-clr-w b-solid b-1 b-clr-border-light bx-shd-none">
+
+                            <mat-card-header class="pb-10">
+                                <mat-card-title-group class="flex-row jc-sb">
+                                    <mat-card-title class="fs-20 mt-0 fw-500">Resources</mat-card-title>
+                                    <div class="flex-row clr-txt-light ai-ctr">
+                                        <span class="mr-10 fs-14">This year</span>
+                                        <button class="p-0 br-32 w-24 h-24 b-none bg-clr-w">
+                                            <img src="/assets/arrow-down.svg"
+                                                class="w-19 h-19 flex-row jc-ctr ai-ctr" />
+                                        </button>
+                                    </div>
+                                </mat-card-title-group>
+                            </mat-card-header>
+
+                            <mat-card-content class="flex-row fs-12 pt-5 b-t-solid b-t-1 b-t-clr-border-light">
+                                <app-user-list class="gp-10 flex-col" [list]="resouceList"></app-user-list>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+
+                </div>
+                <div
+                    class="bg-clr-l-b-g-w p-20 clr-txt-light b-t-solid b-t-1 b-t-clr-footer-bdr flex-row jc-ctr ai-ctr">
+                    © 2025 All Rights Reserved.</div>
+            </div>
+        </div>
+
+        <app-reimbursement class="p-20 flex-col gp-15 reimbursement"
+            *ngIf="currentPage() == 'Reimbursement'"></app-reimbursement>
+    </div>
+</div>

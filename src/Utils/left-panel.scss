@@ -1,0 +1,19 @@
+.left-panel{
+    width: 16%;
+    display: flex;
+    background-color: #1B1D21;
+    height: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 49%;
+    border-radius: 8px;
+}
+
+.logoDiv{
+    height: 6%;
+    padding-bottom: 0px !important;
+}

@@ -1,0 +1,22 @@
+<mat-card class="h-100-p bg-clr-w b-solid b-1 b-clr-border-light bx-shd-none">
+    <mat-card-content class="flex-row fs-12">
+        <div class="flex-row jc-sb">
+            {{title}}
+            <img *ngIf="imgPath" class="w-20 h-20" [src]="imgPath" mat-card-image/>
+        </div>
+        
+    </mat-card-content>
+    <mat-card-header>        
+        <mat-card-title-group>
+            <mat-card-title class="fw-600">{{content}}</mat-card-title>            
+        </mat-card-title-group>        
+    </mat-card-header>
+    
+    <mat-card-actions>
+        <button class="btn-icon-no-border clr-txt-g" mat-button *ngFor="let item of actions">{{item}}</button>
+    </mat-card-actions>
+    <!-- <hr class="w-100-p bg-clr-gr h-1"/> -->
+    <mat-card-footer class="pl-15 pr-15 pb-10 pt-10 fs-12 b-t-solid b-t-1 b-t-clr-border-light">
+        {{footerContent}}
+    </mat-card-footer>
+</mat-card>

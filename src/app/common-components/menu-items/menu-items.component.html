@@ -1,0 +1,9 @@
+<button *ngIf="!isDropDown" class="btn-icon-no-border pl-6 " (click)="containerchanged(itemName)" [ngClass]="{'clicked' : selectedContainer === itemName}" >
+    <img class="icon-img" [src]="itemIcon"/>
+    <span>{{itemName}}</span>
+</button>
+
+<button *ngIf="isDropDown" class="btn-icon-no-border-dropdown pl-6 " (click)="containerchanged(itemName)" [ngClass]="{'clicked' : selectedContainer === itemName}" >
+    <img class="icon-img" [src]="itemIcon"/>
+    <span>{{itemName}}</span>
+</button>

@@ -1,0 +1,45 @@
+.content{
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    .header{
+        height: 8%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        border-bottom: solid;
+        border-width: 1px;
+        border-color: #E3EAF4;
+        .user-name{
+            display: flex;
+            flex-direction: row;
+            button{
+                border-radius: 32px;
+                width: 31px;
+                height: 31px;
+                border: none;
+                background-color: white;
+                img{
+                    width: 31px;
+                    height: 31px;
+                }
+            }
+        }
+    }
+    .right-cont{
+        // overflow: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        app-dashboard{
+            flex: 1;
+        }
+        .right-cont-sub{
+            overflow: auto;
+        }
+    }
+}

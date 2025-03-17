@@ -1,0 +1,19 @@
+<div class="flex-row">
+    <p class="fs-20 m-0 fw-500 flex-1">Reimbursement</p>
+    <div class="h-36 flex-row gp-10">
+        <div class="w-full h-full cursor-pointer bg-clr-w br-8 b-1 b-clr-border-light pl-10 flex-row jc-ctr ai-ctr gp-5">
+            <img [src]="searchIcon" class="w-12 h-12" alt="search">
+            <input type="text" placeholder="Search"
+                class="b-0 b-clr-none">
+        </div>
+        <div class="btn-icon-group gp-5  ">
+            <button class="bg-clr-w br-32 b-1 b-clr-border-light">
+                <img [src]="settingIcon" alt="icon" class="w-20 h-20" />
+            </button>
+        </div>
+    </div>
+</div>
+<div>
+    <app-table-ui [button_icons]="settingsIcons" [displayedColumns]="displayedColumns"
+        [dataSource]="dataSource"></app-table-ui>
+</div>

@@ -1,0 +1,84 @@
+<p class="fs-20 m-0 fw-500">Dashboard</p>
+<div class="dashboard-grid">
+    <div class="grid-item grid-item-1">
+        <div class="flex-row w-100-p gp-20">
+            <ng-container *ngFor="let item of dashboard_card_detials">
+                <app-dashboard-card class="w-100-p"  [footerContent]="item.footerContent" [actions]="item.actions" [imgPath]="item.imgPath" [content]="item.content" [title]="item.title" ></app-dashboard-card>
+            </ng-container>    
+        </div>
+    </div>
+    <div class="grid-item grid-item-2 gp-20 item-2-cards gp-10 flex-row">
+        <mat-card class="flex-1 h-100-p bg-clr-w b-solid b-1 b-clr-border-light bx-shd-none flex-col jc-sb">
+                
+            <div>
+                <mat-card-header class="pb-10">        
+                    <mat-card-title-group class="flex-row jc-sb">
+                        <mat-card-title class="fs-20 mt-0 fw-500">Top Violators</mat-card-title>
+                        <div class="flex-row clr-txt-light ai-ctr">
+                            <span class="mr-10 fs-14">This year</span>
+                            <button class="p-0 br-32 w-24 h-24 b-none bg-clr-w">
+                                <img src="/assets/arrow-down.svg" class="w-19 h-19 flex-row jc-ctr ai-ctr"/>
+                            </button>
+                        </div>
+                    </mat-card-title-group>        
+                </mat-card-header>
+        
+                <mat-card-content class="flex-row fs-12 pt-5 b-t-solid b-t-1 b-t-clr-border-light">
+                    <app-user-list class="gp-10 flex-col gp-20" [list]="users1"></app-user-list>            
+                </mat-card-content>
+            </div>
+            
+            <mat-card-footer class="mt-15 pl-17 pr-15 pb-12 pt-12 fs-12 b-t-solid b-t-1 b-t-clr-border-light">
+                <button class="p-0 m-0 btn-icon-no-border clr-txt-g" mat-button >View All</button>
+            </mat-card-footer>
+        </mat-card>
+        <mat-card class="flex-1 h-100-p bg-clr-w b-solid b-1 b-clr-border-light bx-shd-none flex-col jc-sb">
+            
+            <div>
+                <mat-card-header class="pb-10">        
+                    <mat-card-title-group class="flex-row jc-sb">
+                        <mat-card-title class="fs-20 mt-0 fw-500">Overall Summary</mat-card-title>
+                        <div class="flex-row clr-txt-light ai-ctr">
+                            <span class="mr-10 fs-14">This year</span>
+                            <button class="p-0 br-32 w-24 h-24 b-none bg-clr-w">
+                                <img src="/assets/arrow-down.svg" class="w-19 h-19 flex-row jc-ctr ai-ctr"/>
+                            </button>
+                        </div>
+                    </mat-card-title-group>        
+                </mat-card-header>
+        
+                <mat-card-content class="fs-12 pt-5 b-t-solid b-t-1 b-t-clr-border-light gp-100">
+                    <app-user-list class="gp-10 flex-col gp-20" [list]="summaryList"></app-user-list>            
+                </mat-card-content>
+            </div>
+            
+            <mat-card-footer class="mt-15 pl-17 pr-15 pb-12 pt-12 fs-12 b-t-solid b-t-1 b-t-clr-border-light">
+                <button class="p-0 m-0 btn-icon-no-border clr-txt-g" mat-button >View All</button>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+    <div class="grid-item grid-item-3">
+        <mat-card class="bg-clr-l-b-g-w bg-clr-w b-solid b-1 b-clr-border-light bx-shd-none">
+                
+            <mat-card-header class="pb-10">        
+                <mat-card-title-group class="flex-row jc-sb">
+                    <mat-card-title class="fs-20 mt-0 fw-500">Top spending users</mat-card-title>
+                    <div class="flex-row clr-txt-light ai-ctr">
+                        <span class="mr-10 fs-14">This month</span>
+                        <button class="flex-row jc-ctr ai-ctr p-0 br-32 w-24 h-24 b-none bg-clr-w">
+                            <img src="/assets/arrow-down.svg" class="w-19 h-19 "/>
+                        </button>
+                    </div>
+                </mat-card-title-group>        
+            </mat-card-header>
+    
+            <mat-card-content class="flex-col fs-12 pt-5 b-t-solid b-t-1 b-t-clr-border-light">
+                <div class="flex-row clr-txt-light jc-sb pb-3 pt-3">
+                    <div >Username</div>
+                    <div>Ammount (INR)</div>
+                </div>
+                <app-user-list class="gp-10 flex-col" [list]="topSpenders"></app-user-list>            
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

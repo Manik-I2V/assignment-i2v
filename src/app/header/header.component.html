@@ -1,0 +1,26 @@
+<div class="btn-icon-group gp-10 mr-40">
+    <button>
+        <img src="/assets/add.svg"/>
+    </button>
+    <button (mouseenter)="showNotification()" (mouseleave)="hideNotification()">
+        <img src="/assets/notification.svg"/>
+    </button>
+</div>
+<div class="user-name ai-ctr">
+    <span class="mr-10 fs-16">User Name</span>
+    <div (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+        <button class="p-0">
+            <img src="/assets/Avatar.svg"/>
+        </button>
+        <button class="p-0" >
+            <img src="/assets/arrow-down.svg" class="w-19 h-19 flex-row jc-ctr ai-ctr pl-5"/>
+        </button>
+    </div>
+    
+</div>
+<div class="z-50 dropDown bg-clr-w mr-20"  *ngIf="isDropdownVisible" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+    <app-drop-down ></app-drop-down>
+</div>
+<div class="z-50 notification bg-clr-w mr-20"  *ngIf="isNotificationVisible" (mouseenter)="showNotification()" (mouseleave)="hideNotification()">
+    <app-notification></app-notification>
+</div>

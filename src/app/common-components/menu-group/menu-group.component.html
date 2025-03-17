@@ -1,0 +1,3 @@
+<ng-container *ngFor="let item of menuList">
+    <app-menu-items [isDropDown]="isDropDown" [selectedContainer]="selectedContainer" (onSelectionChanged)="onSelectionChange($event)" class="items-css" [itemIcon]="selectedContainer === item.itemName ? item.activeIcon : item.itemIcon" [itemName]="item.itemName"></app-menu-items>
+</ng-container>
